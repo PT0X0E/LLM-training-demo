@@ -13,7 +13,6 @@ from dataclasses import dataclass, asdict
 
 import torch
 from torch.optim import AdamW
-from torch.optim.lr_scheduler import CosineAnnealingLR
 
 # Add project path
 sys.path.append(str(Path(__file__).parent.parent.parent))

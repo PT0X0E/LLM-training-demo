@@ -3,7 +3,6 @@ Pretraining script
 Implements GPT model pretraining workflow
 """
 
-import os
 import sys
 import math
 import time
@@ -13,7 +12,6 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 
 import torch
-import torch.nn as nn
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.amp import autocast, GradScaler  # Updated for deprecation
