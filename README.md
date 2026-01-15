@@ -4,7 +4,7 @@
 </div>
 
 <a name="english"></a>
-# LLM training demo
+# LLM training demo {#english}
 
 A minimal, practical repo for training your own GPT-style LLM from scratch, including pretraining, SFT and RLHF/DPO.
 
@@ -62,7 +62,7 @@ python src/training/rlhf.py ppo --sft_model_path sft_run --reward_model_path rew
 ---
 
 <a name="中文"></a>
-# LLM training demo
+# LLM training demo {#中文}
 
 本项目为从零训练GPT风格大模型的极简实用代码，包括预训练、SFT、RLHF/DPO等流程。
 
