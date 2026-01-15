@@ -23,7 +23,7 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src.model.transformer import GPT, GPTConfig
 from src.data.tokenizer import LLMTokenizer, TOKENIZER_DIR
-from data.pretrain_dataset import create_dataloaders
+from src.data.pretrain_dataset import create_dataloaders
 
 
 DATA_DIR = Path(__file__).parent.parent.parent / "data"
