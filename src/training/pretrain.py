@@ -40,7 +40,7 @@ class TrainConfig:
     
     # Training parameters
     batch_size: int = 8
-    max_seq_len: int = 256
+    max_seq_len: int = 512
     num_epochs: int = 10
     learning_rate: float = 3e-4
     weight_decay: float = 0.1
@@ -412,7 +412,7 @@ def main():
     
     # Training arguments
     parser.add_argument("--batch_size", type=int, default=8)
-    parser.add_argument("--max_seq_len", type=int, default=256)
+    parser.add_argument("--max_seq_len", type=int, default=512)
     parser.add_argument("--num_epochs", type=int, default=10)
     parser.add_argument("--learning_rate", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=0.1)
