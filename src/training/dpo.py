@@ -253,6 +253,10 @@ class DPOTrainer:
         shift_logits = logits[..., :-1, :].contiguous()
         shift_labels = labels[..., 1:].contiguous()
         
+        # replace -100 with pad_token_id for gathering
+        safe_shift_labels = shift_labels.clone()
+        safe_shift_labels[safe_shift_labels == -100] = 0
+
         # Compute log probabilities for each position
         log_probs = F.log_softmax(shift_logits, dim=-1)
         
@@ -260,7 +264,7 @@ class DPOTrainer:
         # [batch, seq_len-1]
         target_log_probs = log_probs.gather(
             dim=-1,
-            index=shift_labels.unsqueeze(-1)
+            index=safe_shift_labels.unsqueeze(-1)
         ).squeeze(-1)
         
         # Create mask (only compute for non-padding and non -100 positions)
